@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aethelnet"
+version = "0.1.0"
+description = "Aethelnet Python SDK for Liquid Graph Neural Networks and P2P Swarms"
+authors = [
+  { name="Aethelnet Team" }
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.0.0",
+    "websockets>=11.0",
+    "requests>=2.31.0",
+    "numpy>=1.24.0"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/aethelnet/aethelnet-sdk"
