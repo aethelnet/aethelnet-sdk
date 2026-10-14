@@ -52,8 +52,9 @@ class SwarmNode:
                     payload = data.get("payload", data)
                     
                     if msg_type in self._handlers:
+                        import inspect
                         for handler in self._handlers[msg_type]:
-                            if asyncio.iscoroutinefunction(handler):
+                            if inspect.iscoroutinefunction(handler):
                                 await handler(payload)
                             else:
                                 handler(payload)

@@ -76,9 +76,9 @@ class TensorStream:
             logger.error(f"Failed to build tensor from COMPUTE_TENSOR: {e}")
 
     async def _dispatch_tensor(self, tensor: torch.Tensor, context: dict):
-        import asyncio
+        import inspect
         for handler in self._tensor_handlers:
-            if asyncio.iscoroutinefunction(handler):
+            if inspect.iscoroutinefunction(handler):
                 await handler(tensor, context)
             else:
                 handler(tensor, context)
